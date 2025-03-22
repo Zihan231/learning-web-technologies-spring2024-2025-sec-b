@@ -6,32 +6,32 @@
     <title>Form</title>
   </head>
   <body>
-    <form action="login.html">
+    <form action="login.html" onsubmit="return validation()">
       <fieldset>
         <legend>Sigup</legend>
         <table border="1px">
           <tr>
             <td>First Name</td>
             <td>
-              <input type="text" name="firstName" />
+              <input type="text" name="firstName" id="Name" />
             </td>
           </tr>
           <tr>
             <td>Student ID</td>
             <td>
-              <input type="number" name="studentID" />
+              <input type="number" name="studentID" id="Sid" />
             </td>
           </tr>
           <tr>
             <td>Student Email</td>
             <td>
-              <input type="email" name="studentEmail" />
+              <input type="email" name="studentEmail" id="Semail" />
             </td>
           </tr>
           <tr>
             <td>Password</td>
             <td>
-              <input type="password" name="password" />
+              <input type="password" name="password" id="Spass" />
             </td>
           </tr>
           <tr>
@@ -95,7 +95,31 @@
             </td>
           </tr>
         </table>
-      </fieldset>	
+      </fieldset>
     </form>
+    <div>
+      <p id="msg"></p>
+    </div>
+    <div>
+      <a href="login.html"><button>Back</button></a>
+    </div>
+    <script>
+      function validation() {
+        let Name = document.getElementById("Name").value;
+        let sId = document.getElementById("Sid").value;
+        let Email = document.getElementById("Semail").value;
+        let Pass = document.getElementById("Spass").value;
+
+        let msg = document.getElementById("msg");
+
+        if (Name == "" || sId == "" || Email == "" || Pass == "") {
+          msg.innerHTML = "Please fill up all the fields";
+          msg.style.color = "red";
+          return false;
+        } else {
+          return true;
+        }
+      }
+    </script>
   </body>
 </html>
