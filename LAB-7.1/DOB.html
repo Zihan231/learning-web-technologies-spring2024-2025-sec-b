@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gender</title>
+  </head>
+  <body>
+    <fieldset>
+      <legend>DOB</legend>
+      <form action="" onsubmit="return validation()">
+        <input type="date" name="Date" id="DOB" />
+        <hr />
+        <input type="submit" value="Submit" />
+      </form>
+    </fieldset>
+    <script>
+      function validation() {
+        let date = document.getElementById("DOB").value;
+        if (date == "") {
+          alert("Please Set DOB");
+          return false;
+        } else {
+          return true;
+        }
+      }
+    </script>
+  </body>
+</html>

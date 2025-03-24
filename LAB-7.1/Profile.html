@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Picture</title>
+  </head>
+  <body>
+    <fieldset>
+      <legend>Profile Picture</legend>
+      <form action="" onsubmit="return validation()">
+        <label for="UID">User ID</label>
+        <input type="number" name="ID" id="UID" placeholder="Enter ID" />
+        <br />
+        <br />
+        <label for="Dp">Picture</label>
+        <input type="file" name="Profile" id="Dp" />
+        <input type="submit" value="Submit" />
+      </form>
+    </fieldset>
+    <script>
+      function validation() {
+        let ID = document.getElementById("UID");
+        let Dp = document.getElementById("Dp");
+        if (ID.value == "") {
+          alert("Please enter your ID");
+          return false;
+        } else if (ID.value < 0) {
+          alert("ID can't be negative");
+          return false;
+        } else if (Dp.value == "") {
+          alert("Please upload a picture");
+          return false;
+        } else {
+          return true;
+        }
+      }
+    </script>
+  </body>
+</html>

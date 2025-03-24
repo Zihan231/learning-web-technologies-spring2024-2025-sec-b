@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Name</title>
+  </head>
+  <body>
+    <fieldset>
+      <legend>Name</legend>
+      <form action="" onsubmit="return validation()">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Enter your name"
+        />
+        <input type="submit" value="Submit" />
+      </form>
+    </fieldset>
+    <script>
+      function validation() {
+        let name = document.getElementById("name").value;
+        let allowed = /^[a-zA-Z-.]+$/;
+        if (name == "") {
+          alert("Please fill up the field");
+          return false;
+        } else if (name.length < 2) {
+          alert("Name must be at least 2 characters long");
+          return false;
+        } else if (!allowed.test(name)) {
+          alert("Name can contain letters (a-z, A-Z), Dot(.) and dash(-)");
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Degree</title>
+  </head>
+  <body>
+    <fieldset>
+      <legend>Degree</legend>
+      <form action="" onsubmit="return validation()">
+        <select name="Select" id="bId">
+          <option value="A+">A+</option>
+          <option value="A-">A-</option>
+          <option value="B+">B+</option>
+          <option value="B-">B-</option>
+        </select>
+
+        <input type="submit" value="Submit" />
+      </form>
+    </fieldset>
+    <script>
+      function validation() {
+        let SelectedGroup = document.getElementById("bId");
+        if (SelectedGroup.value === "") {
+          alert("Please select any blood group");
+          return false;
+        } else {
+          alert("Blood group selected " + SelectedGroup.value);
+          return true;
+        }
+      }
+    </script>
+  </body>
+</html>
